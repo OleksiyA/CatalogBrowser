@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@class CatalogItemDetails;
+
 @interface RDItemDetailsViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet UIImageView *itemCoverImageView;
+@property (weak, nonatomic) IBOutlet UILabel *titleTextLabel;
+@property (weak, nonatomic) IBOutlet UILabel *authorTextLabel;
+@property (weak, nonatomic) IBOutlet UILabel *priceTextLabel;
+@property (strong, nonatomic) IBOutlet UIView *waitingView;
+
+@property (strong)CatalogItemDetails*           itemDetails;
 
 @end

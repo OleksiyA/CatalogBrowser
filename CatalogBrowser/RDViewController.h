@@ -10,4 +10,8 @@
 
 @interface RDViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIButton *buttonGo;
+@property (weak, nonatomic) IBOutlet UILabel *topLabel;
+
+
 @end

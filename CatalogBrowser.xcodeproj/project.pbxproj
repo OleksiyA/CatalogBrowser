@@ -9,6 +9,18 @@
 /* Begin PBXBuildFile section */
 		7A36EDBC16D3FF7800B68917 /* RDListOfItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A36EDBB16D3FF7800B68917 /* RDListOfItemsViewController.m */; };
 		7A36EDBF16D3FF9A00B68917 /* RDItemDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A36EDBE16D3FF9A00B68917 /* RDItemDetailsViewController.m */; };
+		7A36EDC316D677C200B68917 /* RDCatalogModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A36EDC216D677C200B68917 /* RDCatalogModel.m */; };
+		7A36EDC616D6781300B68917 /* RDCatalogIncrementalStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A36EDC516D6781300B68917 /* RDCatalogIncrementalStore.m */; };
+		7A36EDC816D6791000B68917 /* libPods-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A36EDC716D6791000B68917 /* libPods-ios.a */; };
+		7A36EDCA16D6795100B68917 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A36EDC916D6795100B68917 /* CoreData.framework */; };
+		7A36EDCD16D67AD300B68917 /* Catalog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A36EDCB16D67AD300B68917 /* Catalog.xcdatamodeld */; };
+		7A36EDD016D67B0200B68917 /* RDCatalogClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A36EDCF16D67B0200B68917 /* RDCatalogClient.m */; };
+		7A36EDD216D67EAF00B68917 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A36EDD116D67EAF00B68917 /* CFNetwork.framework */; };
+		7A36EDD416D67EB900B68917 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A36EDD316D67EB900B68917 /* SystemConfiguration.framework */; };
+		7A36EDD616D67EC100B68917 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A36EDD516D67EC100B68917 /* MobileCoreServices.framework */; };
+		7A36EDDE16D689D100B68917 /* CatalogItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A36EDDD16D689D100B68917 /* CatalogItem.m */; };
+		7A36EDE116D689D100B68917 /* CatalogItemDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A36EDE016D689D100B68917 /* CatalogItemDetails.m */; };
+		7A36EDE516D6904A00B68917 /* RDItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A36EDE416D6904A00B68917 /* RDItemCell.m */; };
 		7A956FC116D15BF200A2614E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A956FC016D15BF200A2614E /* UIKit.framework */; };
 		7A956FC316D15BF200A2614E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A956FC216D15BF200A2614E /* Foundation.framework */; };
 		7A956FC516D15BF200A2614E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A956FC416D15BF200A2614E /* CoreGraphics.framework */; };
@@ -27,6 +39,25 @@
 		7A36EDBB16D3FF7800B68917 /* RDListOfItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDListOfItemsViewController.m; sourceTree = "<group>"; };
 		7A36EDBD16D3FF9A00B68917 /* RDItemDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDItemDetailsViewController.h; sourceTree = "<group>"; };
 		7A36EDBE16D3FF9A00B68917 /* RDItemDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDItemDetailsViewController.m; sourceTree = "<group>"; };
+		7A36EDC116D677C200B68917 /* RDCatalogModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDCatalogModel.h; sourceTree = "<group>"; };
+		7A36EDC216D677C200B68917 /* RDCatalogModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDCatalogModel.m; sourceTree = "<group>"; };
+		7A36EDC416D6781300B68917 /* RDCatalogIncrementalStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDCatalogIncrementalStore.h; sourceTree = "<group>"; };
+		7A36EDC516D6781300B68917 /* RDCatalogIncrementalStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDCatalogIncrementalStore.m; sourceTree = "<group>"; };
+		7A36EDC716D6791000B68917 /* libPods-ios.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = "libPods-ios.a"; path = "Pods/build/Release-iphoneos/libPods-ios.a"; sourceTree = "<group>"; };
+		7A36EDC916D6795100B68917 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		7A36EDCC16D67AD300B68917 /* Catalog.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Catalog.xcdatamodel; sourceTree = "<group>"; };
+		7A36EDCE16D67B0200B68917 /* RDCatalogClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDCatalogClient.h; sourceTree = "<group>"; };
+		7A36EDCF16D67B0200B68917 /* RDCatalogClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDCatalogClient.m; sourceTree = "<group>"; };
+		7A36EDD116D67EAF00B68917 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		7A36EDD316D67EB900B68917 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		7A36EDD516D67EC100B68917 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		7A36EDD716D6827E00B68917 /* RDDefinitions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RDDefinitions.h; sourceTree = "<group>"; };
+		7A36EDDC16D689D100B68917 /* CatalogItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatalogItem.h; sourceTree = "<group>"; };
+		7A36EDDD16D689D100B68917 /* CatalogItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatalogItem.m; sourceTree = "<group>"; };
+		7A36EDDF16D689D100B68917 /* CatalogItemDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatalogItemDetails.h; sourceTree = "<group>"; };
+		7A36EDE016D689D100B68917 /* CatalogItemDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatalogItemDetails.m; sourceTree = "<group>"; };
+		7A36EDE316D6904A00B68917 /* RDItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDItemCell.h; sourceTree = "<group>"; };
+		7A36EDE416D6904A00B68917 /* RDItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDItemCell.m; sourceTree = "<group>"; };
 		7A956FBD16D15BF200A2614E /* CatalogBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatalogBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A956FC016D15BF200A2614E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7A956FC216D15BF200A2614E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -50,6 +81,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A36EDD616D67EC100B68917 /* MobileCoreServices.framework in Frameworks */,
+				7A36EDD416D67EB900B68917 /* SystemConfiguration.framework in Frameworks */,
+				7A36EDD216D67EAF00B68917 /* CFNetwork.framework in Frameworks */,
+				7A36EDCA16D6795100B68917 /* CoreData.framework in Frameworks */,
+				7A36EDC816D6791000B68917 /* libPods-ios.a in Frameworks */,
 				7A956FC116D15BF200A2614E /* UIKit.framework in Frameworks */,
 				7A956FC316D15BF200A2614E /* Foundation.framework in Frameworks */,
 				7A956FC516D15BF200A2614E /* CoreGraphics.framework in Frameworks */,
@@ -62,13 +98,12 @@
 		7A36EDB916D3FF4C00B68917 /* User Interface Classes */ = {
 			isa = PBXGroup;
 			children = (
+				7A36EDE216D6902800B68917 /* List of Items */,
 				7A956FD816D15BF200A2614E /* MainStoryboard.storyboard */,
-				7A956FDE16D15BF300A2614E /* RDViewController.h */,
-				7A956FDF16D15BF300A2614E /* RDViewController.m */,
-				7A36EDBA16D3FF7800B68917 /* RDListOfItemsViewController.h */,
-				7A36EDBB16D3FF7800B68917 /* RDListOfItemsViewController.m */,
 				7A36EDBD16D3FF9A00B68917 /* RDItemDetailsViewController.h */,
 				7A36EDBE16D3FF9A00B68917 /* RDItemDetailsViewController.m */,
+				7A956FDE16D15BF300A2614E /* RDViewController.h */,
+				7A956FDF16D15BF300A2614E /* RDViewController.m */,
 			);
 			name = "User Interface Classes";
 			sourceTree = "<group>";
@@ -76,8 +111,38 @@
 		7A36EDC016D4022500B68917 /* Data Management */ = {
 			isa = PBXGroup;
 			children = (
+				7A36EDCB16D67AD300B68917 /* Catalog.xcdatamodeld */,
+				7A36EDD816D6844100B68917 /* Data Objects */,
+				7A36EDCE16D67B0200B68917 /* RDCatalogClient.h */,
+				7A36EDCF16D67B0200B68917 /* RDCatalogClient.m */,
+				7A36EDC416D6781300B68917 /* RDCatalogIncrementalStore.h */,
+				7A36EDC516D6781300B68917 /* RDCatalogIncrementalStore.m */,
+				7A36EDC116D677C200B68917 /* RDCatalogModel.h */,
+				7A36EDC216D677C200B68917 /* RDCatalogModel.m */,
 			);
 			name = "Data Management";
+			sourceTree = "<group>";
+		};
+		7A36EDD816D6844100B68917 /* Data Objects */ = {
+			isa = PBXGroup;
+			children = (
+				7A36EDDC16D689D100B68917 /* CatalogItem.h */,
+				7A36EDDD16D689D100B68917 /* CatalogItem.m */,
+				7A36EDDF16D689D100B68917 /* CatalogItemDetails.h */,
+				7A36EDE016D689D100B68917 /* CatalogItemDetails.m */,
+			);
+			name = "Data Objects";
+			sourceTree = "<group>";
+		};
+		7A36EDE216D6902800B68917 /* List of Items */ = {
+			isa = PBXGroup;
+			children = (
+				7A36EDBA16D3FF7800B68917 /* RDListOfItemsViewController.h */,
+				7A36EDBB16D3FF7800B68917 /* RDListOfItemsViewController.m */,
+				7A36EDE316D6904A00B68917 /* RDItemCell.h */,
+				7A36EDE416D6904A00B68917 /* RDItemCell.m */,
+			);
+			name = "List of Items";
 			sourceTree = "<group>";
 		};
 		7A956FB416D15BF200A2614E = {
@@ -100,6 +165,11 @@
 		7A956FBF16D15BF200A2614E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7A36EDD516D67EC100B68917 /* MobileCoreServices.framework */,
+				7A36EDD316D67EB900B68917 /* SystemConfiguration.framework */,
+				7A36EDD116D67EAF00B68917 /* CFNetwork.framework */,
+				7A36EDC916D6795100B68917 /* CoreData.framework */,
+				7A36EDC716D6791000B68917 /* libPods-ios.a */,
 				7A956FC016D15BF200A2614E /* UIKit.framework */,
 				7A956FC216D15BF200A2614E /* Foundation.framework */,
 				7A956FC416D15BF200A2614E /* CoreGraphics.framework */,
@@ -115,6 +185,7 @@
 				7A956FD016D15BF200A2614E /* RDAppDelegate.m */,
 				7A36EDB916D3FF4C00B68917 /* User Interface Classes */,
 				7A956FC716D15BF200A2614E /* Supporting Files */,
+				7A36EDD716D6827E00B68917 /* RDDefinitions.h */,
 			);
 			path = CatalogBrowser;
 			sourceTree = "<group>";
@@ -205,6 +276,13 @@
 				7A956FE016D15BF300A2614E /* RDViewController.m in Sources */,
 				7A36EDBC16D3FF7800B68917 /* RDListOfItemsViewController.m in Sources */,
 				7A36EDBF16D3FF9A00B68917 /* RDItemDetailsViewController.m in Sources */,
+				7A36EDC316D677C200B68917 /* RDCatalogModel.m in Sources */,
+				7A36EDC616D6781300B68917 /* RDCatalogIncrementalStore.m in Sources */,
+				7A36EDCD16D67AD300B68917 /* Catalog.xcdatamodeld in Sources */,
+				7A36EDD016D67B0200B68917 /* RDCatalogClient.m in Sources */,
+				7A36EDDE16D689D100B68917 /* CatalogItem.m in Sources */,
+				7A36EDE116D689D100B68917 /* CatalogItemDetails.m in Sources */,
+				7A36EDE516D6904A00B68917 /* RDItemCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +371,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CatalogBrowser/CatalogBrowser-Prefix.pch";
+				HEADER_SEARCH_PATHS = "Pods/Headers/**";
 				INFOPLIST_FILE = "CatalogBrowser/CatalogBrowser-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -305,6 +384,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CatalogBrowser/CatalogBrowser-Prefix.pch";
+				HEADER_SEARCH_PATHS = "Pods/Headers/**";
 				INFOPLIST_FILE = "CatalogBrowser/CatalogBrowser-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -334,6 +414,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7A36EDCB16D67AD300B68917 /* Catalog.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7A36EDCC16D67AD300B68917 /* Catalog.xcdatamodel */,
+			);
+			currentVersion = 7A36EDCC16D67AD300B68917 /* Catalog.xcdatamodel */;
+			path = Catalog.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7A956FB516D15BF200A2614E /* Project object */;
 }

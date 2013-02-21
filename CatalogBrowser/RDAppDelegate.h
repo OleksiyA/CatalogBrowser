@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class RDCatalogModel;
+
 @interface RDAppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) UIWindow*     window;
+@property (strong)RDCatalogModel*           model;
 
 @end

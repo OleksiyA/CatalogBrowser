@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2057" systemVersion="12C60" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="CatalogItem" representedClassName="CatalogItem" syncable="YES">
+        <attribute name="itemID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="itemDetails" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="CatalogItemDetails" inverseName="itemBrief" inverseEntity="CatalogItemDetails" syncable="YES"/>
+    </entity>
+    <entity name="CatalogItemDetails" representedClassName="CatalogItemDetails" syncable="YES">
+        <attribute name="author" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="itemID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="itemBrief" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="CatalogItem" inverseName="itemDetails" inverseEntity="CatalogItem" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="CatalogItem" positionX="160" positionY="192" width="128" height="105"/>
+        <element name="CatalogItemDetails" positionX="160" positionY="192" width="128" height="135"/>
+    </elements>
+</model>
