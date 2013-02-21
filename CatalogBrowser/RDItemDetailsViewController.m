@@ -39,6 +39,12 @@
 
 -(void)setupContents
 {
+    if(!self.itemDetails)
+    {
+        NSLog(@"Item was not assigned to Details View Controller.");
+        return;
+    }
+    
     [self showWaitingView:NO];
     
     self.titleTextLabel.text = self.itemDetails.title;

@@ -183,9 +183,7 @@
         
         if(!details)
         {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self handleUserRequestedDetailsForNotYetLoadedItemForCell:cell];
-            });
+            [self handleUserRequestedDetailsForNotYetLoadedItemForCell:cell];
             
             return NO;
         }
@@ -217,6 +215,11 @@
         
         CatalogItemDetails* details = catalogItem.itemDetails;
         
+        if(details)
+        {
+            NSLog(@"Relationship are not loaded.");
+        }
+        
         itemDetailsVC.itemDetails = details;
     }
 }
@@ -237,7 +240,16 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"itemCell";
-    RDItemCell *cell = (RDItemCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    RDItemCell *cell = nil;
+    
+    if([tableView respondsToSelector:@selector(dequeueReusableCellWithIdentifier:forIndexPath:)])
+    {
+        cell = (RDItemCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    }
+    else
+    {
+        cell = (RDItemCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    }
     
     CatalogItem* catalogItem = (CatalogItem*)[self.fetchResultController objectAtIndexPath:indexPath];
     
@@ -245,21 +257,6 @@
     
     return cell;
 }
-
-#pragma mark - Table view delegate
-
-#if 0
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-}
-#endif
 
 #pragma mark NSFetchedResultsControllerDelegate methods
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
