@@ -10,4 +10,6 @@
 
 @interface RDListOfItemsViewController : UITableViewController
 
+@property (strong, nonatomic) IBOutlet UIView *waitingView;
+
 @end
