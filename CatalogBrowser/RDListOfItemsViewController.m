@@ -3,7 +3,8 @@
 //  CatalogBrowser
 //
 //  Created by Oleksiy Ivanov on 2/19/13.
-//  Copyright (c) 2013 Oleksiy Ivanov. All rights reserved.
+//  Copyright (c) 2013 Oleksiy Ivanov.
+//  The MIT License (MIT).
 //
 
 #import "RDListOfItemsViewController.h"
@@ -15,14 +16,14 @@
 
 @interface RDListOfItemsViewController()<NSFetchedResultsControllerDelegate>
 
-@property(strong)NSFetchedResultsController*        fetchResultController;
+@property(strong)NSFetchedResultsController *fetchResultController;
 
 @end
 
 @implementation RDListOfItemsViewController
 
 #pragma mark Internal interface
--(void)setupFetchResultController
+- (void)setupFetchResultController
 {
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"CatalogItem"];
     fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"itemID" ascending:NO]];
@@ -34,14 +35,13 @@
     self.fetchResultController.delegate = self;
 }
 
--(void)showWaitingView:(BOOL)animated
+- (void)showWaitingView:(BOOL)animated
 {
     [self.navigationController.view addSubview:self.waitingView];
     
     self.waitingView.frame = CGRectMake(0, 0, self.navigationController.view.frame.size.width, self.navigationController.view.frame.size.height);
     
-    if(animated)
-    {
+    if (animated) {
         self.waitingView.alpha = 0;
         
         [UIView animateWithDuration:0.3 animations:^{
@@ -50,7 +50,7 @@
     }
 }
 
--(void)hideWaitingView
+- (void)hideWaitingView
 {
     [UIView animateWithDuration:0.3 animations:^{
         self.waitingView.alpha = 0;
@@ -59,18 +59,16 @@
     }];
 }
 
--(void)activateDetailsViewControllerCatalogItem:(CatalogItem*)catalogItem
+- (void)activateDetailsViewControllerCatalogItem:(CatalogItem *)catalogItem
 {
     [self performSegueWithIdentifier:@"showItemDetails" sender:catalogItem];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    if([object isKindOfClass:[CatalogItem class]])
-    {
-        CatalogItem* catalogItem = (CatalogItem*)object;
-        if(catalogItem.itemDetails)
-        {
+    if ([object isKindOfClass:[CatalogItem class]]) {
+        CatalogItem *catalogItem = (CatalogItem *)object;
+        if ( catalogItem.itemDetails ) {
             [catalogItem removeObserver:self forKeyPath:@"itemDetails" context:NULL];
             
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -83,10 +81,9 @@
     }
 }
 
--(void)handleUserRequestedDetailsForNotYetLoadedItemForCell:(RDItemCell*)cell
+- (void)handleUserRequestedDetailsForNotYetLoadedItemForCell:(RDItemCell *)cell
 {
-    if(!cell)
-    {
+    if ( !cell ) {
         NSLog(@"Nil cell was passed.");
         return;
     }
@@ -99,12 +96,9 @@
        
         CatalogItem* catalogItem = cell.catalogItem;
         
-        if(!catalogItem.itemDetails)
-        {
+        if ( !catalogItem.itemDetails ) {
             [catalogItem addObserver:self forKeyPath:@"itemDetails" options:0 context:NULL];
-        }
-        else
-        {
+        } else {
             [self activateDetailsViewControllerCatalogItem:catalogItem];
         }
         
@@ -112,7 +106,7 @@
 }
 
 #pragma mark Allocation and Deallocation
-- (id)initWithStyle:(UITableViewStyle)style
+- (instancetype)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
@@ -129,7 +123,7 @@
     [self setupFetchResultController];
 }
 
--(void)viewDidUnload
+- (void)viewDidUnload
 {
     self.fetchResultController.delegate = nil;
     self.fetchResultController = nil;
@@ -144,45 +138,39 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)viewWillAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
     dispatch_async(dispatch_get_main_queue(), ^{
         
-        NSError* error = nil;
+        NSError *error = nil;
         [self.fetchResultController performFetch:&error];
-        if(error)
-        {
-            NSLog(@"fetch error [%@].",error);
+        if (error) {
+            NSLog(@"fetch error [%@].", error);
         }
         
     });
 }
 
--(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
 {
-    if([identifier isEqualToString:@"showItemDetails"])
-    {
+    if ([identifier isEqualToString:@"showItemDetails"]) {
         //extract activated item
-        CatalogItem* catalogItem = nil;
-        RDItemCell* cell = nil;
+        CatalogItem *catalogItem = nil;
+        RDItemCell *cell = nil;
         
-        if([sender isKindOfClass:[RDItemCell class]])
-        {
-            cell = (RDItemCell*)sender;
+        if([sender isKindOfClass:[RDItemCell class]]) {
+            cell = (RDItemCell *)sender;
             
             catalogItem = cell.catalogItem;
-        }
-        else
-        {
-            catalogItem = (CatalogItem*)sender;
+        } else {
+            catalogItem = (CatalogItem *)sender;
         }
         
-        CatalogItemDetails* details = catalogItem.itemDetails;
+        CatalogItemDetails *details = catalogItem.itemDetails;
         
-        if(!details)
-        {
+        if (!details) {
             [self handleUserRequestedDetailsForNotYetLoadedItemForCell:cell];
             
             return NO;
@@ -192,31 +180,26 @@
     return YES;
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if([segue.identifier isEqualToString:@"showItemDetails"])
-    {
+    if ([segue.identifier isEqualToString:@"showItemDetails"]) {
         //extract activated item
         CatalogItem* catalogItem = nil;
         
-        if([sender isKindOfClass:[RDItemCell class]])
-        {
-            RDItemCell* cell = (RDItemCell*)sender;
+        if ([sender isKindOfClass:[RDItemCell class]]) {
+            RDItemCell* cell = (RDItemCell *)sender;
             
             catalogItem = cell.catalogItem;
-        }
-        else
-        {
-            catalogItem = (CatalogItem*)sender;
+        } else {
+            catalogItem = (CatalogItem *)sender;
         }
         
         //configure item details view controller
-        RDItemDetailsViewController* itemDetailsVC = (RDItemDetailsViewController*)[segue destinationViewController];
+        RDItemDetailsViewController *itemDetailsVC = (RDItemDetailsViewController *)[segue destinationViewController];
         
-        CatalogItemDetails* details = catalogItem.itemDetails;
+        CatalogItemDetails *details = catalogItem.itemDetails;
         
-        if(details)
-        {
+        if (details) {
             NSLog(@"Relationship are not loaded.");
         }
         
@@ -242,16 +225,13 @@
     static NSString *CellIdentifier = @"itemCell";
     RDItemCell *cell = nil;
     
-    if([tableView respondsToSelector:@selector(dequeueReusableCellWithIdentifier:forIndexPath:)])
-    {
-        cell = (RDItemCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    }
-    else
-    {
-        cell = (RDItemCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if ([tableView respondsToSelector:@selector(dequeueReusableCellWithIdentifier:forIndexPath:)]) {
+        cell = (RDItemCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    } else {
+        cell = (RDItemCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     }
     
-    CatalogItem* catalogItem = (CatalogItem*)[self.fetchResultController objectAtIndexPath:indexPath];
+    CatalogItem *catalogItem = (CatalogItem *)[self.fetchResultController objectAtIndexPath:indexPath];
     
     [cell setNewItem:catalogItem];
     

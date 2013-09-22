@@ -3,7 +3,8 @@
 //  CatalogBrowser
 //
 //  Created by Oleksiy Ivanov on 2/21/13.
-//  Copyright (c) 2013 Oleksiy Ivanov. All rights reserved.
+//  Copyright (c) 2013 Oleksiy Ivanov.
+//  The MIT License (MIT).
 //
 
 #import "RDCatalogClient.h"
@@ -22,7 +23,7 @@
     return _sharedClient;
 }
 
-- (id)initWithBaseURL:(NSURL *)url {
+- (instancetype)initWithBaseURL:(NSURL *)url {
     self = [super initWithBaseURL:url];
     if (!self) {
         return nil;
@@ -40,12 +41,9 @@
                              withContext:(NSManagedObjectContext *)context
 {
     NSMutableURLRequest *mutableURLRequest = nil;
-    if ([fetchRequest.entityName isEqualToString:@"CatalogItem"])
-    {
+    if ([fetchRequest.entityName isEqualToString:@"CatalogItem"]) {
         mutableURLRequest = [self requestWithMethod:@"GET" path:@"/api/v10/items" parameters:nil];
-    }
-    else if([fetchRequest.entityName isEqualToString:@"CatalogItemDetails"])
-    {
+    } else if([fetchRequest.entityName isEqualToString:@"CatalogItemDetails"]) {
         NSLog(@"Requesting CatalogItemDetails, fetch request [%@].",fetchRequest);
     }
     
@@ -57,14 +55,11 @@
                                  fromResponse:(NSHTTPURLResponse *)response
 {
     NSMutableDictionary *mutablePropertyValues = [[super attributesForRepresentation:representation ofEntity:entity fromResponse:response] mutableCopy];
-    if ([entity.name isEqualToString:@"CatalogItem"])
-    {
+    if ([entity.name isEqualToString:@"CatalogItem"]) {
         [mutablePropertyValues setValue:[NSNumber numberWithInteger:[[representation valueForKey:@"id"] integerValue]] forKey:@"itemID"];
         [mutablePropertyValues setValue:[representation valueForKey:@"link"] forKey:@"link"];
         [mutablePropertyValues setValue:[representation valueForKey:@"title"] forKey:@"title"];
-    }
-    else if ([entity.name isEqualToString:@"CatalogItemDetails"])
-    {
+    } else if ([entity.name isEqualToString:@"CatalogItemDetails"]) {
         [mutablePropertyValues setValue:[NSNumber numberWithInteger:[[representation valueForKey:@"id"] integerValue]] forKey:@"itemID"];
         [mutablePropertyValues setValue:[representation valueForKey:@"image"] forKey:@"image"];
         [mutablePropertyValues setValue:[representation valueForKey:@"title"] forKey:@"title"];
@@ -85,10 +80,9 @@
                                forObjectWithID:(NSManagedObjectID *)objectID
                         inManagedObjectContext:(NSManagedObjectContext *)context
 {
-    NSEntityDescription * destinationEntity = relationship.destinationEntity;
+    NSEntityDescription *destinationEntity = relationship.destinationEntity;
     
-    if([[destinationEntity name]isEqualToString:@"CatalogItemDetails"])
-    {
+    if ([[destinationEntity name]isEqualToString:@"CatalogItemDetails"]) {
         return YES;
     }
     
@@ -102,12 +96,10 @@
 {
     NSEntityDescription * destinationEntity = relationship.destinationEntity;
     
-    if([[destinationEntity name]isEqualToString:@"CatalogItemDetails"])
-    {
+    if ([[destinationEntity name]isEqualToString:@"CatalogItemDetails"]) {
         NSManagedObject *object = [context objectWithID:objectID];
-        if([object isKindOfClass:[CatalogItem class]])
-        {
-            CatalogItem* catalogItemRelationSource = (CatalogItem*)object;
+        if ([object isKindOfClass:[CatalogItem class]]) {
+            CatalogItem *catalogItemRelationSource = (CatalogItem *)object;
             
             return [self requestWithMethod:method path:catalogItemRelationSource.link parameters:nil];
         }

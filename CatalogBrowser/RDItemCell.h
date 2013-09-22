@@ -3,7 +3,8 @@
 //  CatalogBrowser
 //
 //  Created by Oleksiy Ivanov on 2/21/13.
-//  Copyright (c) 2013 Oleksiy Ivanov. All rights reserved.
+//  Copyright (c) 2013 Oleksiy Ivanov.
+//  The MIT License (MIT).
 //
 
 #import <UIKit/UIKit.h>
@@ -12,8 +13,8 @@
 
 @interface RDItemCell : UITableViewCell
 
-@property(strong)CatalogItem*           catalogItem;
+@property (strong, nonatomic) CatalogItem *catalogItem;
 
--(void)setNewItem:(CatalogItem*)item;
+- (void)setNewItem:(CatalogItem *)item;
 
 @end

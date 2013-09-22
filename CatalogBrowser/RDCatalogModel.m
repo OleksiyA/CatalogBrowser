@@ -3,7 +3,8 @@
 //  CatalogBrowser
 //
 //  Created by Oleksiy Ivanov on 2/21/13.
-//  Copyright (c) 2013 Oleksiy Ivanov. All rights reserved.
+//  Copyright (c) 2013 Oleksiy Ivanov.
+//  The MIT License (MIT).
 //
 
 #import "RDCatalogModel.h"
@@ -30,17 +31,17 @@
     }
 }
 
--(void)onApplicationWillTerminateHandler:(NSNotification*)notification
+- (void)onApplicationWillTerminateHandler:(NSNotification *)notification
 {
     [self saveContext];
 }
 
--(void)subscribeToNotifications
+- (void)subscribeToNotifications
 {
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(onApplicationWillTerminateHandler:) name:UIApplicationWillTerminateNotification object:nil];
 }
 
--(void)unsubscribeFromNotifications
+- (void)unsubscribeFromNotifications
 {
     [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
@@ -113,7 +114,7 @@
 }
 
 #pragma mark Allocation and deallocation
--(id)init
+- (instancetype)init
 {
     self = [super init];
     
@@ -122,7 +123,7 @@
     return self;
 }
 
--(void)dealloc
+- (void)dealloc
 {
     [self unsubscribeFromNotifications];
 }

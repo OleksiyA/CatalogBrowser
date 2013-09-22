@@ -1,10 +1,7 @@
 
 
-target :ios do
-  platform :ios, '5.0'
-  link_with 'RestKitTests'
+platform :ios, '5.0'
   
-  pod 'AFIncrementalStore', '0.3.0'
-end
+pod 'AFIncrementalStore', '0.3.0'
 
 

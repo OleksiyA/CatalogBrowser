@@ -3,7 +3,8 @@
 //  CatalogBrowser
 //
 //  Created by Oleksiy Ivanov on 2/21/13.
-//  Copyright (c) 2013 Oleksiy Ivanov. All rights reserved.
+//  Copyright (c) 2013 Oleksiy Ivanov.
+//  The MIT License (MIT).
 //
 
 #import "RDItemCell.h"
@@ -11,7 +12,7 @@
 
 @implementation RDItemCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
@@ -27,10 +28,9 @@
     // Configure the view for the selected state
 }
 
--(void)setNewItem:(CatalogItem*)item
+- (void)setNewItem:(CatalogItem *)item
 {
-    if(item == self.catalogItem)
-    {
+    if (item == self.catalogItem) {
         return;
     }
     

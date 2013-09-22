@@ -3,7 +3,8 @@
 //  CatalogBrowser
 //
 //  Created by Oleksiy Ivanov on 2/19/13.
-//  Copyright (c) 2013 Oleksiy Ivanov. All rights reserved.
+//  Copyright (c) 2013 Oleksiy Ivanov.
+//  The MIT License (MIT).
 //
 
 #import <UIKit/UIKit.h>
@@ -18,6 +19,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *priceTextLabel;
 @property (strong, nonatomic) IBOutlet UIView *waitingView;
 
-@property (strong)CatalogItemDetails*           itemDetails;
+@property (strong)CatalogItemDetails *itemDetails;
 
 @end

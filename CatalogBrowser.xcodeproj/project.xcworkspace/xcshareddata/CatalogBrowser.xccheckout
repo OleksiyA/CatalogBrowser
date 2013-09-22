@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D5CDF25C-D78C-4DCB-A735-0B78F30E0138</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CatalogBrowser</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1540D74D-8897-45A2-BE56-4BDFB8D094DA</key>
+		<string>https://github.com/OleksiyA/CatalogBrowser.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CatalogBrowser.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1540D74D-8897-45A2-BE56-4BDFB8D094DA</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/OleksiyA/CatalogBrowser.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1540D74D-8897-45A2-BE56-4BDFB8D094DA</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1540D74D-8897-45A2-BE56-4BDFB8D094DA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CatalogBrowser</string>
+		</dict>
+	</array>
+</dict>
+</plist>
