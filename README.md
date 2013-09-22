@@ -5,4 +5,4 @@ CatalogBrowser is the iOS App for querying web-service with REST interface for l
 
 Using Core Data (via AFIncrementalStore) for accessing web service data.
 
-Not operation without server url.
+Not operational without server url.
